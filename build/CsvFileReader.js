@@ -14,7 +14,9 @@ var CsvFileReader = /** @class */ (function () {
     CsvFileReader.prototype.read = function () {
         this.data = fs_1.default.readFileSync(this.filename, {
             encoding: 'utf-8'
-        }).split('\n').map(function (row) {
+        })
+            .split('\n')
+            .map(function (row) {
             return row.split(',');
         })
             .map(function (row) {
@@ -24,6 +26,8 @@ var CsvFileReader = /** @class */ (function () {
                 row[2],
                 parseInt(row[3]),
                 parseInt(row[4]),
+                row[5],
+                row[6]
             ];
         });
     };
